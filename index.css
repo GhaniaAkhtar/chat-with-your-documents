@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: #0B0C0E;
+  color: #EDEDEF;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Thin custom scrollbar so it fits the technical/drafting feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.streaming-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  background: #E8A33D;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 0.9s step-end infinite;
+}
